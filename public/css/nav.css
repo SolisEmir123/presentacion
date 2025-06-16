@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f6f8;
+    color: #333;
+    overflow-x: hidden;
+}
+
+aside {
+    width: 240px;
+    background: #1e1e2f;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+aside h2 {
+    margin-bottom: 40px;
+    font-size: 22px;
+    text-align: center;
+    color: #00c6a9;
+}
+
+aside nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: block;
+}
+
+aside nav a:hover {
+    background: #00c6a9;
+    color: #1e1e2f;
+}
+
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  aside.open {
+    transform: translateX(0);
+  }
+}

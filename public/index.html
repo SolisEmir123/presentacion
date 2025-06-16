@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - OneDestiny</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/nav.css">
+    <style>
+
+        html, body {
+            height: 100%;
+        }
+        main {
+            flex-grow: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .menu-toggle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: black;
+            display: none;
+            z-index: 1001;
+        }
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 100vh;
+        }
+        
+        footer {
+            color:  black;
+            text-align: center;
+            padding: 15px 20px;
+            font-size: 10px;
+        } 
+
+        @media (max-width: 764px) {
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="menu-toggle" id="menuButton" onclick="toggleMenu()">☰</button>
+
+    <aside id="sidebar">
+        <h2>A</h2>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="">Sitio 1</a>
+            <a href="">Sitio 2</a>
+        </nav>
+    </aside>
+
+    <div class="contenedor">
+        <main>
+        </main>
+
+
+        <footer>
+            <p>© 2025 OneDestiny.</p>
+        </footer>
+    </div>
+</body>
+
+<script src="js/nav.js?v=1.0"></script>
+</html>

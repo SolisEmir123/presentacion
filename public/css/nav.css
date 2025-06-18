@@ -29,19 +29,20 @@ aside h2 {
     text-align: center;
     color: #00c6a9;
 }
-
 aside nav a {
-    color: white;
-    text-decoration: none;
-    padding: 12px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    display: block;
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  display: block;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
 }
 
 aside nav a:hover {
-    background: #00c6a9;
-    color: #1e1e2f;
+  background: #00c6a9;
+  color: #1e1e2f;
+  transform: translateY(-6px) scale(1.03);
 }
 
 

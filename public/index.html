@@ -7,7 +7,7 @@
     <title>Inicio - OneDestiny</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/nav.css?v=1.1" />
+    <link rel="stylesheet" href="./css/nav.css?v=1.2" />
     <style>
         html,
         body {
@@ -165,6 +165,7 @@
             <a href="solucion.html">Solución</a>
             <a href="plantrabajo.html">Plan de Trabajo</a>
             <a href="equipo.html">Equipo</a>
+            <a href="conclusion.html">Conclusion</a>
         </nav>
     </aside>
 
@@ -207,13 +208,143 @@
                             decisiones del personal administrativo.
                         </p>
                     </div>
+                    <div class="card-section" id="card2">
+                        <h3>❌ Principales problemas operativos detectados:</h3>
+                        <ol>
+                            <li>
+                                <strong>Falta de control de inventario en tiempo real:</strong>
+                                <br>
+                                No se sabe cuánta carne se pierde por caducidad o robo.
+                            </li>
+                            <li>
+                                <strong>Errores humanos en registros de ventas:</strong>
+                                <br>
+                                Órdenes mal ingresadas o productos no registrados.
+                            </li>
+                            <li>
+                                <strong>Dificultad para prever demanda:</strong>
+                                <br>
+                                Se compra carne sin estimaciones de ventas, generando sobrantes o escasez.
+                            </li>
+                            <li>
+                                <strong>Falta de reportes automáticos:</strong>
+                                <br>
+                                La gerencia no puede ver tendencias ni tomar decisiones basadas en datos.
+                            </li>
+                            <li>
+                                <strong>Desconexión entre cocina, caja y bodega:</strong>
+                                <br>
+                                Se desconoce cuánta carne se usó para cada platillo vendido.
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="card-section" id="card3">
+                        <h3>🤖 ¿Cómo puede ayudar un nuevo sistema de control e inventario?</h3>
+                        <p>
+                        <ol>
+                            <strong>✅ Funcionalidades clave del nuevo sistema:</strong>
+                            <li>
+                                <strong>Registro automático de ventas por producto.</strong>
+                                <br>
+                                Cada venta se registra automáticamente, facilitando el seguimiento y evitando omisiones.
+                            </li>
+                            <li>
+                                <strong>Reducción del error humano mediante lectores de códigos QR o RFID.</strong>
+                                <br>
+                                Identificación rápida y precisa de productos para minimizar errores.
+                            </li>
+                            <li>
+                                <strong>Control del inventario en tiempo real (entradas y salidas).</strong>
+                                <br>
+                                El inventario se actualiza automáticamente con cada movimiento.
+                            </li>
+                            <li>
+                                <strong>Alertas por niveles bajos de inventario o producto por caducar.</strong>
+                                <br>
+                                Notificaciones automáticas ante bajo stock o productos próximos a caducar.
+                            </li>
+                            <li>
+                                <strong>Generación automática de reportes de ventas, mermas y proyecciones de
+                                    compra.</strong>
+                                <br>
+                                Reportes detallados y recomendaciones de compra basadas en tendencias.
+                            </li>
+                            <li>
+                                <strong>Dashboard con métricas clave (ventas por hora, por platillo, por día,
+                                    etc.).</strong>
+                                <br>
+                                Panel visual con estadísticas relevantes para la toma de decisiones.
+                            </li>
+                        </ol>
+                        </p>
+                    </div>
                 </div>
 
                 <button class="arrow-btn arrow-right" onclick="showSlide('right')">→</button>
             </div>
 
-            
-            
+            <div id="testimonial-bubble" style="
+                position: fixed;
+                bottom: 90px;
+                right: 30px;
+                max-width: 320px;
+                background: #fff;
+                color: #333;
+                border-radius: 20px 20px 20px 0;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+                padding: 20px 28px;
+                font-size: 1rem;
+                z-index: 2000;
+                transition: opacity 0.5s;
+                opacity: 1;
+                min-height: 80px;
+                display: flex;
+                align-items: center;
+            ">
+                <span id="testimonial-text" style="flex:1;">Se vendían 250 tacos de carne al día, pero no se sabía cuántos gramos se usaban por taco, provocando descontrol en la carne usada.</span>
+                <button id="close-testimonial" style="
+                    background: none;
+                    border: none;
+                    font-size: 1.3rem;
+                    color: #888;
+                    margin-left: 10px;
+                    cursor: pointer;
+                    padding: 0;
+                " aria-label="Cerrar">&times;</button>
+            </div>
+
+            <script>
+                const testimonials = [
+                    "Se vendían 250 tacos de carne al día, pero no se sabía cuántos gramos se usaban por taco, provocando descontrol en la carne usada.",
+                    "Se registra automáticamente que cada taco usa 120 g. El sistema descuenta del inventario cada venta, y alerta si se pasa del uso promedio. Así, se puede detectar si hay robos o si se está desperdiciando carne en cocina.",
+                ];
+                let testimonialIndex = 0;
+                const bubble = document.getElementById('testimonial-bubble');
+                const text = document.getElementById('testimonial-text');
+                const closeBtn = document.getElementById('close-testimonial');
+                let testimonialInterval;
+
+                function showNextTestimonial() {
+                    if (!bubble || bubble.style.display === "none") return;
+                    bubble.style.opacity = 0;
+                    setTimeout(() => {
+                        testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+                        text.textContent = testimonials[testimonialIndex];
+                        bubble.style.opacity = 1;
+                    }, 500);
+                }
+
+                testimonialInterval = setInterval(showNextTestimonial, 5000);
+
+                closeBtn.addEventListener('click', () => {
+                    bubble.style.opacity = 0;
+                    setTimeout(() => {
+                        bubble.style.display = "none";
+                    }, 500);
+                    clearInterval(testimonialInterval);
+                });
+            </script>
+
 
         </main>
 
@@ -252,7 +383,7 @@
 
 
 
-        const cards = [document.getElementById('card0'), document.getElementById('card1')];
+        const cards = [document.getElementById('card0'), document.getElementById('card1'), document.getElementById('card2'), document.getElementById('card3')];
         let current = 0;
 
         function showSlide(direction) {

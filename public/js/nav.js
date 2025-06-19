@@ -1,13 +1,10 @@
-function toggleMenu() {
-    const sidebar = document.getElementById('sidebar');
-    const menuButton = document.getElementById('menuButton');
+  const menuButton = document.getElementById('menuButton');
+  const sidebar = document.getElementById('sidebar');
 
-    menuButton.style.transition = "transform 0.3s ease"
+  menuButton.addEventListener('click', toggleMenu);
+
+  function toggleMenu() {
     sidebar.classList.toggle('open');
-
-    if(sidebar.classList.contains('open')){
-        menuButton.style.color = "#fff";
-    } else {
-        menuButton.style.color = "#000000";
-    }
-}
+    menuButton.style.transition = "transform 0.3s ease";
+    menuButton.style.color = sidebar.classList.contains('open') ? "#fff" : "#000";
+  }

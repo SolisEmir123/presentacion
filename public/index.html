@@ -2,52 +2,112 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio - OneDestiny</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/nav.css">
     <style>
         html,
         body {
             height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+
+        .contenedor {
+            margin-left: 220px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
         }
 
         main {
-            flex-grow: 1;
-            padding: 40px;
+            flex: 1;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .card-section {
+            max-width: 800px;
+            width: 100%;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            box-sizing: border-box;
+            position: absolute;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: scale(0.95);
+        }
+
+        .active {
+            opacity: 1;
+            position: relative;
+            transform: scale(1);
+            z-index: 1;
+        }
+
+        .arrow-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            background-color: #bebebe;
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .arrow-btn:hover {
+            background-color: #495057;
+        }
+
+        .arrow-left,
+        .arrow-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .arrow-left {
+            left: -60px;
+            /* Pegado al lado izquierdo de la card */
+        }
+
+        .arrow-right {
+            right: -60px;
+        }
+
+        footer {
             text-align: center;
+            padding: 15px;
+            font-size: 12px;
         }
 
         .menu-toggle {
             position: absolute;
             top: 20px;
             left: 20px;
-            background: none;
-            border: none;
             font-size: 28px;
-            color: black;
+            z-index: 1000;
+            background: none;
             display: none;
-            z-index: 1001;
-        }
-
-        .contenedor {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            min-height: 100vh;
-        }
-
-        footer {
-            color: black;
-            text-align: center;
-            padding: 15px 20px;
-            font-size: 10px;
+            border: none;
         }
 
         @media (max-width: 764px) {
@@ -56,63 +116,160 @@
             }
         }
 
-        .ajustar-texto {
-            max-width: 100%;
-            word-wrap: break-word;
-            /* Rompe palabras largas si es necesario */
-            overflow-wrap: break-word;
-            /* Soporte más moderno */
-            line-height: 1.5;
-            /* Mejora la legibilidad */
-            font-size: 1rem;
-            /* Tamaño relativo y responsivo */
-            justify-content: center;
+        @media (max-width: 764px) {
+            .contenedor {
+                margin-left: 0;
+            }
         }
-        .parrafo {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        .slide-out-left {
+            animation: slideLeft 0.5s forwards;
+        }
+
+        .slide-out-right {
+            animation: slideRight 0.5s forwards;
+        }
+
+        @keyframes slideLeft {
+            to {
+                transform: translateX(-100%) scale(0.9);
+                opacity: 0;
+            }
+        }
+
+        @keyframes slideRight {
+            to {
+                transform: translateX(100%) scale(0.9);
+                opacity: 0;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+            .arrow-left, .arrow-right {
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <button class="menu-toggle" id="menuButton" onclick="toggleMenu()">☰</button>
+    <button class="menu-toggle" id="menuButton">☰</button>
 
     <aside id="sidebar">
         <h2>Take a Steak</h2>
         <nav>
             <a href="index.html">Inicio</a>
-            <a href="">Solucion</a>
+            <a href="#">Solución</a>
         </nav>
     </aside>
 
     <div class="contenedor">
+        <h1>TAKE A STEAK</h1>
         <main>
-            <h1>TAKE A STEAK</h1>
-            <div class="parrafo">
-                <p class="ajustar-texto">Es una
-                    empresa
-                    dedicada a la venta
-                    de alimentos especializada en cortes de carne. En esta página analizaremos una problemática actual
-                    que enfrenta la empresa en su proceso de ventas, y cómo proponemos solucionarla mediante el
-                    desarrollo
-                    de una aplicación web. Esta app funcionará como un punto de venta digital, mejorando la comodidad,
-                    eficiencia y control tanto para el personal como para la administración del negocio.</p>
+            <div style="position: relative; display: flex; align-items: center;">
+                <button class="arrow-btn arrow-left" onclick="showSlide('left')">←</button>
+
+                <!-- Contenedor de la tarjeta -->
+                <div style="position: relative;">
+                    <div class="card-section active" id="card0">
+                        <h3>¿Qué es Take a Steak?</h3>
+                        <p>
+                            Es una empresa dedicada a la venta de alimentos especializada en cortes de carne. En
+                            esta página
+                            analizaremos una problemática actual que enfrenta la empresa en su proceso de ventas, y
+                            cómo
+                            proponemos solucionarla mediante el desarrollo de una aplicación web. Esta app
+                            funcionará como un
+                            punto de venta digital, mejorando la comodidad, eficiencia y control tanto para el
+                            personal como
+                            para la administración del negocio.
+                        </p>
+                    </div>
+                    <div class="card-section" id="card1">
+                        <h3>Problemática</h3>
+                        <p>
+                            La empresa restaurantera enfrenta dificultades constantes en el control de inventario y
+                            el registro
+                            de ventas. Estas fallas han ocasionado desorganización en el manejo de productos,
+                            errores en la toma
+                            de decisiones y pérdidas económicas por falta de información precisa y en tiempo real.
+
+                            Ante esta situación, se plantea el desarrollo de una aplicación digital que permita
+                            automatizar el
+                            registro de ventas y la gestión de inventario. Esta solución tecnológica buscará mejorar
+                            la
+                            organización interna, reducir errores humanos y ofrecer reportes claros que faciliten la
+                            toma de
+                            decisiones del personal administrativo.
+                        </p>
+                    </div>
+                </div>
+
+                <button class="arrow-btn arrow-right" onclick="showSlide('right')">→</button>
             </div>
 
+
         </main>
+
         <footer>
             <p>© 2025 OneDestiny.</p>
         </footer>
     </div>
-</body>
 
-<script src="js/nav.js?v=1.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let startX = 0;
+        let endX = 0;
+        const touchZone = document.querySelector('main'); // zona sensible al swipe
+
+        touchZone.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+        });
+
+        touchZone.addEventListener('touchend', e => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const delta = endX - startX;
+
+            if (Math.abs(delta) > 50) {
+                if (delta < 0) {
+                    // swipe a la izquierda
+                    showSlide('right');
+                } else {
+                    // swipe a la derecha
+                    showSlide('left');
+                }
+            }
+        }
+
+
+
+        const cards = [document.getElementById('card0'), document.getElementById('card1')];
+        let current = 0;
+
+        function showSlide(direction) {
+            const currentCard = cards[current];
+            const nextIndex = (current + (direction === 'right' ? 1 : -1) + cards.length) % cards.length;
+            const nextCard = cards[nextIndex];
+
+            // Aplica animación de salida
+            currentCard.classList.add(direction === 'right' ? 'slide-out-left' : 'slide-out-right');
+
+            // Espera a que termine la animación antes de cambiar
+            setTimeout(() => {
+                currentCard.classList.remove('active', 'slide-out-left', 'slide-out-right');
+                current = nextIndex;
+                nextCard.classList.add('active');
+            }, 500);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/nav.js?v=1.0"></script>
+
+</body>
 
 </html>

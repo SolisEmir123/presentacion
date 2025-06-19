@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Algoritmo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f9f9f9;
+        }
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Algoritmo de ejemplo</h1>
+    <pre>
+Proceso PuntoDeVenta
+	Definir opcion, i, cantidadVendida Como Entero
+	Definir inventario, precio Como Real
+	Definir producto Como Caracter
+	Dimensionar producto[5], inventario[5], precio[5]
+	Definir ventaTotalGeneral Como Real
+	ventaTotalGeneral <- 0
+	
+	// Inicializar productos
+	producto[1] <- "Platillo 1"
+	precio[1] <- 25
+	inventario[1] <- 50
+	
+	producto[2] <- "Platillo 2"
+	precio[2] <- 40
+	inventario[2] <- 30
+	
+	producto[3] <- "Platillo 3"
+	precio[3] <- 30
+	inventario[3] <- 40
+	
+	producto[4] <- "Platillo 4"
+	precio[4] <- 15
+	inventario[4] <- 60
+	
+	producto[5] <- "Platillo 5"
+	precio[5] <- 20
+	inventario[5] <- 25
+	
+	Repetir
+		Escribir "-------- MENÚ DE VENTAS --------"
+		Para i <- 1 Hasta 5
+			Escribir i, ". ", producto[i], " - $", precio[i], " (Stock: ", inventario[i], ")"
+		FinPara
+		Escribir "0. Salir"
+		Escribir "Seleccione un producto: "
+		Leer opcion
+		
+		Si opcion >= 1 Y opcion <= 5 Entonces
+			Escribir "¿Cuántos desea vender?: "
+			Leer cantidadVendida
+			
+			Si cantidadVendida <= inventario[opcion] Entonces
+				Definir totalVenta Como Real // <- Definir dentro del bloque
+				totalVenta <- cantidadVendida * precio[opcion]
+				inventario[opcion] <- inventario[opcion] - cantidadVendida
+				ventaTotalGeneral <- ventaTotalGeneral + totalVenta
+				Escribir "Venta realizada: $", totalVenta
+			Sino
+				Escribir "No hay suficiente inventario."
+			FinSi
+		FinSi
+
+
+	Hasta Que opcion = 0
+	
+	Escribir "Total de ventas del día: $", ventaTotalGeneral
+FinProceso
+    </pre>
+</body>
+</html>

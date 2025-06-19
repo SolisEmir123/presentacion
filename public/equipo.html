@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equipo - OneDestiny</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/nav.css?v=1.2" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        .contenedor {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1e1e2f;
+            margin-top: 100px;
+            margin-bottom: 5px;
+        }
+
+        .miembros {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            width: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+
+        .menu-toggle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 28px;
+            z-index: 1100;
+            background: none;
+            border: none;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+        }
+
+
+        @media (max-width: 764px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .contenedor {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <button class="menu-toggle" id="menuButton">☰</button>
+
+    <aside id="sidebar">
+        <h2>Take a Steak</h2>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="solucion.html">Solución</a>
+            <a href="plantrabajo.html">Plan de Trabajo</a>
+            <a href="#">Equipo</a>
+        </nav>
+    </aside>
+
+    <div class="contenedor">
+        <h1>Nuestro equipo</h1>
+
+        <div class="miembros">
+            <div class="card">
+                <h3>Emir Solis</h3>
+                <p>Diseñador Frontend</p>
+            </div>
+            <div class="card">
+                <h3>Dario Navarro</h3>
+                <p>Diseñador Frontend</p>
+            </div>
+            <div class="card">
+                <h3>Gael Garcia</h3>
+                <p>Analista de Datos</p>
+            </div>
+            <div class="card">
+                <h3>Sophia Gonzales</h3>
+                <p>Director de Comunicación</p>
+            </div>
+            <div class="card">
+                <h3>Italia Montañez</h3>
+                <p>Planificador de investigación</p>
+            </div>
+            <div class="card">
+                <h3>Yaretzi Valentina</h3>
+                <p>Gerente del Proyecto</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 OneDestiny.</p>
+        </footer>
+    </div>
+
+    <script src="js/nav.js?v=1.0"></script>
+</body>
+
+</html>

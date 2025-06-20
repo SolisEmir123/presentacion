@@ -7,6 +7,8 @@
     <title>Conclusion | OneDestiny</title>
     <link rel="stylesheet" href="css/nav.css?v=1.3">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/animationReload.css">
+    <link rel="stylesheet" href="css/theme-mode.css">
     <style>
         * {
             margin: 0;
@@ -65,6 +67,36 @@
             }
 
         }
+
+        .botonAlgoritmo {
+            background: #1e1e2f;
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .botonAlgoritmo:hover {
+            background: #00c6a9;
+            color: #1e1e2f;
+            transform: translateY(-6px) scale(1.03);
+        }
+        .card {
+            max-width: 500px;
+            margin: 40px auto;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(30,30,47,0.08);
+            padding: 32px 24px;
+            position: relative;
+        }
+        .parrafo {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
@@ -80,19 +112,24 @@
             <a href="plantrabajo.html">Plan de Trabajo</a>
             <a href="equipo.html">Equipo</a>
             <a href="#">Conclusion</a>
+            <button id="theme-toggle" aria-label="Cambiar tema">🌙</button>
         </nav>
     </aside>
 
+    <div id="page-loader">
+        <div class="spinner"></div>
+    </div>
+
     <div class="contenedor">
         <main>
-            <div style="max-width: 500px; margin: 40px auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 16px rgba(30,30,47,0.08); padding: 32px 24px; position: relative;">
+            <div class="card" >
                 <div style="text-align: right; margin-bottom: 18px;">
-                    <a href="algoritmo.html" style="background: #1e1e2f; color: #fff; padding: 10px 22px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: background 0.2s;">
+                    <a href="algoritmo.html" class="botonAlgoritmo">
                         Ver Algoritmo
                     </a>
                 </div>
-                <h2 style="font-size: 1.4rem; color: #1e1e2f; margin-bottom: 12px; font-weight: 500;">Conclusión</h2>
-                <p style="font-size: 1rem; color: #444; line-height: 1.6;">
+                <h2 class="h2_solucion" style="font-size: 1.4rem; margin-bottom: 12px; font-weight: 500;">Conclusión</h2>
+                <p class="parrafo">
                     La implementación de una aplicación digital representa una solución efectiva y necesaria para
                     enfrentar los problemas actuales de la empresa restaurantera. Al automatizar el control de
                     inventario y el registro de ventas, se optimizarán los procesos internos, se minimizarán los errores
@@ -109,6 +146,8 @@
 
 </body>
 <script src="js/nav.js"></script>
+<script src="js/animationReload.js"></script>
+<script src="js/theme-toggle.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

@@ -1,0 +1,43 @@
+/* animationReload.css */
+
+/* Fullscreen overlay */
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+
+/* Simple spinner */
+#page-loader .spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #e0e0e0;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+body.dark #page-loader {
+    background: #121212; /* Dark background for dark mode */
+}
+
+/* Spinner animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hide loader (add this class with JS when page is loaded) */
+#page-loader.hide {
+    opacity: 0;
+    pointer-events: none;
+}

@@ -1,88 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Algoritmo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background: #f9f9f9;
-        }
-        pre {
-            background: #272822;
-            color: #f8f8f2;
-            padding: 20px;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-size: 1.1em;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<title>Algoritmo</title>
+	<link rel="stylesheet" href="css/animationReload.css">
+	<link rel="stylesheet" href="css/theme-mode.css?v=1.0">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 40px;
+			background: #f9f9f9;
+		}
+
+		pre {
+			background: #272822;
+			color: #f8f8f2;
+			padding: 20px;
+			border-radius: 8px;
+			overflow-x: auto;
+			font-size: 1.1em;
+		}
+
+		h1 {
+			color: #333;
+		}
+
+		.backButton {
+			display: inline-flex;
+			align-items: center;
+			text-decoration: none;
+			color: #333;
+			background: #e0e0e0;
+			padding: 8px 16px;
+			border-radius: 5px;
+			margin-bottom: 20px;
+			font-weight: bold;
+			transition: background 0.3s ease, transform 0.2s ease;
+		}
+
+		/* Efecto hover */
+		.backButton:hover {
+			background: #d5d5d5;
+			transform: translateY(-2px);
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		}
+
+		/* Efecto al hacer clic */
+		.backButton:active {
+			transform: scale(0.97);
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+		}
+	</style>
 </head>
+
 <body>
-    <h1>Algoritmo de ejemplo</h1>
-    <pre>
-Proceso PuntoDeVenta
-	Definir opcion, i, cantidadVendida Como Entero
-	Definir inventario, precio Como Real
-	Definir producto Como Caracter
-	Dimensionar producto[5], inventario[5], precio[5]
-	Definir ventaTotalGeneral Como Real
-	ventaTotalGeneral <- 0
-	
-	// Inicializar productos
-	producto[1] <- "Platillo 1"
-	precio[1] <- 25
-	inventario[1] <- 50
-	
-	producto[2] <- "Platillo 2"
-	precio[2] <- 40
-	inventario[2] <- 30
-	
-	producto[3] <- "Platillo 3"
-	precio[3] <- 30
-	inventario[3] <- 40
-	
-	producto[4] <- "Platillo 4"
-	precio[4] <- 15
-	inventario[4] <- 60
-	
-	producto[5] <- "Platillo 5"
-	precio[5] <- 20
-	inventario[5] <- 25
-	
-	Repetir
-		Escribir "-------- MENÚ DE VENTAS --------"
-		Para i <- 1 Hasta 5
-			Escribir i, ". ", producto[i], " - $", precio[i], " (Stock: ", inventario[i], ")"
-		FinPara
-		Escribir "0. Salir"
-		Escribir "Seleccione un producto: "
-		Leer opcion
+	<div id="page-loader">
+		<div class="spinner"></div>
+	</div>
+	<a href="conclusion.html" class="backButton">
+		<span style="font-size: 1.2em; margin-right: 8px;">&#8592;</span> Volver
+	</a>
+	<button id="theme-toggle" aria-label="Cambiar tema">🌙</button>
+	<h1>Algoritmo de ejemplo</h1>
+	<pre>
+	Proceso PuntoDeVenta
+		Definir opcion, i, cantidadVendida Como Entero
+		Definir inventario, precio Como Real
+		Definir producto Como Caracter
+		Dimensionar producto[6], inventario[6], precio[6]
+		Definir ventaTotalGeneral Como Real
+		ventaTotalGeneral <- 0
 		
-		Si opcion >= 1 Y opcion <= 5 Entonces
-			Escribir "¿Cuántos desea vender?: "
-			Leer cantidadVendida
+		// Inicializar productos
+		producto[1] <- "Platillo 1"
+		precio[1] <- 25
+		inventario[1] <- 50
+		
+		producto[2] <- "Platillo 2"
+		precio[2] <- 40
+		inventario[2] <- 30
+		
+		producto[3] <- "Platillo 3"
+		precio[3] <- 30
+		inventario[3] <- 40
+		
+		producto[4] <- "Platillo 4"
+		precio[4] <- 15
+		inventario[4] <- 60
+		
+		producto[5] <- "Platillo 5"
+		precio[5] <- 20
+		inventario[5] <- 25
+		
+		Repetir
+			Escribir "-------- MENÚ DE VENTAS --------"
+			Para i <- 1 Hasta 5
+				Escribir i, ". ", producto[i], " - $", precio[i], " (Stock: ", inventario[i], ")"
+			FinPara
+			Escribir "0. Salir"
+			Escribir "Seleccione un producto: "
+			Leer opcion
 			
-			Si cantidadVendida <= inventario[opcion] Entonces
-				Definir totalVenta Como Real // <- Definir dentro del bloque
-				totalVenta <- cantidadVendida * precio[opcion]
-				inventario[opcion] <- inventario[opcion] - cantidadVendida
-				ventaTotalGeneral <- ventaTotalGeneral + totalVenta
-				Escribir "Venta realizada: $", totalVenta
-			Sino
-				Escribir "No hay suficiente inventario."
+			Si opcion >= 1 Y opcion <= 5 Entonces
+				Escribir "¿Cuántos desea vender?: "
+				Leer cantidadVendida
+				
+				Si cantidadVendida <= inventario[opcion] Entonces
+					Definir totalVenta Como Real // <- Definir dentro del bloque
+					totalVenta <- cantidadVendida * precio[opcion]
+					inventario[opcion] <- inventario[opcion] - cantidadVendida
+					ventaTotalGeneral <- ventaTotalGeneral + totalVenta
+					Escribir "Venta realizada: $", totalVenta
+				Sino
+					Escribir "No hay suficiente inventario."
+				FinSi
 			FinSi
-		FinSi
-
-
-	Hasta Que opcion = 0
-	
-	Escribir "Total de ventas del día: $", ventaTotalGeneral
+			
+			
+		Hasta Que opcion = 0
+		
+		Escribir "Total de ventas del día: $", ventaTotalGeneral
 FinProceso
+    
     </pre>
 </body>
+
+<script src="js/animationReload.js"></script>
+<script src="js/theme-toggle.js"></script>
+
 </html>

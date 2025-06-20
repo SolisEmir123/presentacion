@@ -7,6 +7,8 @@
     <title>Plan de Trabajo | OneDestiny</title>
     <link rel="stylesheet" href="css/nav.css?v=1.3">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/animationReload.css">
+    <link rel="stylesheet" href="css/theme-mode.css?v=1.0">
     <style>
         * {
             margin: 0;
@@ -33,7 +35,6 @@
             font-size: 2rem;
             font-weight: 600;
             color: #1e1e2f;
-            margin-top: 100px;
             margin-bottom: 5px;
         }
 
@@ -70,6 +71,21 @@
             width: 100%;
             max-width: 700px;
             margin: 20px auto;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(30, 30, 47, 0.10), 0 1.5px 6px rgba(0, 198, 169, 0.08);
+            padding: 20px 32px 32px 32px;
+            margin: 20px 0 24px 0; /* o incluso margin: 0 0 16px 0; */
+            max-width: 750px;
+            width: 100%;
+            transition: box-shadow 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 32px rgba(30, 30, 47, 0.16), 0 2px 8px rgba(0, 198, 169, 0.12);
         }
 
         .acordeon-btn {
@@ -123,86 +139,96 @@
             <a href="#">Plan de Trabajo</a>
             <a href="equipo.html">Equipo</a>
             <a href="conclusion.html">Conclusion</a>
+            <button id="theme-toggle" aria-label="Cambiar tema">🌙</button>
         </nav>
     </aside>
+
+    <div id="page-loader">
+        <div class="spinner"></div>
+    </div>
 
 
     <div class="contenedor">
         <main>
-            <h1>Plan de Trabajo</h1>
-            <p>En esta sección, detallamos el plan de trabajo para el desarrollo del proyecto "Take a Steak".</p>
+            <div class="card">
+                <h1>Plan de Trabajo</h1>
+                <p>En esta sección, detallamos el plan de trabajo para el desarrollo del proyecto "Take a Steak".</p>
 
-            <div class="acordeon">
-                <div class="fase">
-                    <button class="acordeon-btn">Fase 1: Investigación y análisis</button>
-                    <div class="acordeon-content">
-                        <strong>Objetivo:</strong>
-                        <p>Entender el problema actual del sistema de punto de venta y definir las necesidades
-                            específicas del restaurante.</p>
-                        <p>Diseñadores:
-                            Serán responsables de desarrollar y estructurar la página web, utilizando la información
-                            proporcionada por el equipo para presentar de forma clara y atractiva los aspectos del
-                            proyecto.</p>
+                <div class="acordeon">
+                    <div class="fase">
+                        <button class="acordeon-btn">Fase 1: Investigación y análisis</button>
+                        <div class="acordeon-content">
+                            <strong>Objetivo:</strong>
+                            <p>Entender el problema actual del sistema de punto de venta y definir las necesidades
+                                específicas del restaurante.</p>
+                            <p>Diseñadores:
+                                Serán responsables de desarrollar y estructurar la página web, utilizando la información
+                                proporcionada por el equipo para presentar de forma clara y atractiva los aspectos del
+                                proyecto.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="fase">
-                    <button class="acordeon-btn">Fase 2: Diseño del sistema</button>
-                    <div class="acordeon-content">
-                        <strong>Objetivo:</strong>
-                        <p>Diseñar la propuesta de solución tanto a nivel técnico como visual.</p>
-                        <p>Director de Comunicación:
-                            Presentará y explicará cada sección de la página web, destacando los datos relevantes, la
-                            propuesta de solución y los beneficios esperados del proyecto.</p>
+                    <div class="fase">
+                        <button class="acordeon-btn">Fase 2: Diseño del sistema</button>
+                        <div class="acordeon-content">
+                            <strong>Objetivo:</strong>
+                            <p>Diseñar la propuesta de solución tanto a nivel técnico como visual.</p>
+                            <p>Director de Comunicación:
+                                Presentará y explicará cada sección de la página web, destacando los datos relevantes,
+                                la
+                                propuesta de solución y los beneficios esperados del proyecto.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="fase">
-                    <button class="acordeon-btn">Fase 3: Desarrollo del sistema</button>
-                    <div class="acordeon-content">
-                        <strong>Objetivo:</strong>
-                        <p>Construir la solución propuesta e integrar las funciones necesarias.</p>
-                        <p>Analista de Datos:
-                            Realizará la investigación de datos relacionados con el restaurante, incluyendo ventas
-                            promedio, pérdidas actuales y problemas operativos. Además, mostrará cómo la implementación
-                            del nuevo sistema podría mejorar la organización interna y aumentar las ganancias.</p>
+                    <div class="fase">
+                        <button class="acordeon-btn">Fase 3: Desarrollo del sistema</button>
+                        <div class="acordeon-content">
+                            <strong>Objetivo:</strong>
+                            <p>Construir la solución propuesta e integrar las funciones necesarias.</p>
+                            <p>Analista de Datos:
+                                Realizará la investigación de datos relacionados con el restaurante, incluyendo ventas
+                                promedio, pérdidas actuales y problemas operativos. Además, mostrará cómo la
+                                implementación
+                                del nuevo sistema podría mejorar la organización interna y aumentar las ganancias.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="fase">
-                    <button class="acordeon-btn">Fase 4: Capacitación y validación</button>
-                    <div class="acordeon-content">
-                        <strong>Objetivo:</strong>
-                        <p>Asegurar que el personal pueda utilizar el nuevo sistema correctamente.</p>
-                        <p>Planificador de Investigación:
-                            Diseñará un plan de trabajo detallado, asignando tareas y tiempos para que todos los
-                            integrantes colaboren de manera coordinada y eficiente durante el desarrollo del proyecto.
-                        </p>
+                    <div class="fase">
+                        <button class="acordeon-btn">Fase 4: Capacitación y validación</button>
+                        <div class="acordeon-content">
+                            <strong>Objetivo:</strong>
+                            <p>Asegurar que el personal pueda utilizar el nuevo sistema correctamente.</p>
+                            <p>Planificador de Investigación:
+                                Diseñará un plan de trabajo detallado, asignando tareas y tiempos para que todos los
+                                integrantes colaboren de manera coordinada y eficiente durante el desarrollo del
+                                proyecto.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="fase">
-                    <button class="acordeon-btn">Fase 5: Pruebas del sistema</button>
-                    <div class="acordeon-content">
-                        <strong>Objetivo:</strong>
-                        <p> Evaluar el funcionamiento del sistema desarrollado en un entorno controlado antes de su
-                            implementación real.</p>
-                        <p>Equipo de pruebas (puede incluir distintos roles):
-                            Ejecutará diversos escenarios para asegurar que el sistema responde correctamente,
-                            identifica errores potenciales y valida la experiencia de usuario.</p>
+                    <div class="fase">
+                        <button class="acordeon-btn">Fase 5: Pruebas del sistema</button>
+                        <div class="acordeon-content">
+                            <strong>Objetivo:</strong>
+                            <p> Evaluar el funcionamiento del sistema desarrollado en un entorno controlado antes de su
+                                implementación real.</p>
+                            <p>Equipo de pruebas (puede incluir distintos roles):
+                                Ejecutará diversos escenarios para asegurar que el sistema responde correctamente,
+                                identifica errores potenciales y valida la experiencia de usuario.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="fase">
-                    <button class="acordeon-btn">Fase 6: Implementación y lanzamiento</button>
-                    <div class="acordeon-content">
-                        <p>Gerente del Proyecto:
-                            Supervisará el avance general del proyecto, asegurándose de que cada miembro del equipo
-                            cumpla con sus responsabilidades y los plazos establecidos, resolviendo posibles problemas
-                            durante el proceso.</p>
+                    <div class="fase">
+                        <button class="acordeon-btn">Fase 6: Implementación y lanzamiento</button>
+                        <div class="acordeon-content">
+                            <p>Gerente del Proyecto:
+                                Supervisará el avance general del proyecto, asegurándose de que cada miembro del equipo
+                                cumpla con sus responsabilidades y los plazos establecidos, resolviendo posibles
+                                problemas
+                                durante el proceso.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </main>
         <footer>
             <p>© 2025 OneDestiny.</p>
@@ -211,6 +237,8 @@
 
 </body>
 <script src="js/nav.js"></script>
+<script src="js/theme-toggle.js"></script>
+<script src="js/animationReload.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     const botones = document.querySelectorAll('.acordeon-btn');

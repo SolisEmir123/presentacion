@@ -1,0 +1,97 @@
+        #theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1500;
+            background-color: #c2d9f3;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        #theme-toggle:hover {
+            background-color: #b2dfdb;
+        }
+
+        body.dark #theme-toggle {
+            background-color: #2a2a2a;
+            color: #aecaea;
+        }
+
+        body.dark #theme-toggle:hover {
+            background-color: #444;
+        }
+
+
+
+        /* Dark mode styles INDEX.HTML */
+
+        body.dark {
+            background-color: #1e1e1e;
+            color: #f1f1f1;
+        }
+
+        body.dark .card-section {
+            background-color: #2e2e2e;
+            color: #ffffff;
+        }
+
+        body.dark #testimonial-bubble {
+            background: #333;
+            color: #f0f0f0;
+            box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark #close-testimonial {
+            color: #aaa;
+        }
+
+        body.dark header,
+        body.dark footer {
+            background-color: #1e1e1e;
+            color: #ddd;
+        }
+
+        body.dark .arrow-btn {
+            background-color: #444;
+            color: #fff;
+        }
+
+        body.dark .arrow-btn:hover {
+            background-color: #666;
+        }
+
+
+        body.dark h1 {
+            color: #f1f1f1;
+        }
+
+        body.dark .card {
+            color: #f1f1f1;
+            background: #2e2e2e ;
+        }
+
+        body.dark .h2_solucion {
+            color: #f1f1f1;
+        }
+
+        body .h2_solucion {
+            color: #1e1e2f;
+        }
+
+        body.dark .acordeon-content {
+            background-color: #2e2e2e;
+            color: #f1f1f1;
+        }
+
+
+        body.dark .parrafo {
+            color: #f1f1f1;
+        }
+
+        body.dark .backButton {
+            background-color: #444;
+            color: #fff;
+        }

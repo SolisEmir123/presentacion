@@ -70,7 +70,7 @@
 
         body.dark .card {
             color: #f1f1f1;
-            background: #2e2e2e ;
+            background: #2e2e2e;
         }
 
         body.dark .h2_solucion {
@@ -95,3 +95,23 @@
             background-color: #444;
             color: #fff;
         }
+
+        body.dark #menu-algoritmo {
+            background-color: #2e2e2e;
+            color: #f1f1f1;
+                }
+
+                body.dark #menu-algoritmo .nav-link::before {
+                    background: linear-gradient(90deg, #333 0%, #444 100%);
+                }
+
+                body.dark #menu-algoritmo .nav-link:hover::before,
+                body.dark #menu-algoritmo .nav-link.active::before {
+                    opacity: 1;
+                }
+
+                body.dark #menu-algoritmo .nav-link:hover,
+                body.dark #menu-algoritmo .nav-link.active {
+                    color: #90caf9;
+                    box-shadow: 0 4px 16px rgba(144, 202, 249, 0.08);
+                }
